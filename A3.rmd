@@ -109,7 +109,6 @@ tendency of the dataset.
 # Task 2
 
 ## Horsepower Distribution Across Engine Types
-
 ```{r}
 # Distribution of Horsepower Across Engine Types
 library(ggplot2)
