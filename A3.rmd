@@ -134,3 +134,12 @@ limited use in this dataset.
 
 =\> The engine type is closely related to the achievable horsepower,
 with more advanced configurations tending to produce greater power.
+
+## Horsepower Distribution Across Engine Size Groups
+```{r}
+# Create Engine Size Groups
+engine$SizeGroup <- cut(engine$EngineSize,
+  breaks = c(60, 90, 190, 299, Inf),
+  labels = c("60-90", "91-190", "191-299", "300+"))
+```
+
