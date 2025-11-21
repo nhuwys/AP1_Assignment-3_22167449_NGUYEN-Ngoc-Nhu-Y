@@ -2,7 +2,11 @@
 title: "Assignment 3"
 author: "NGUYEN Ngoc Nhu Y"
 output: pdf_document
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,
                       comment = "",
@@ -11,6 +15,7 @@ knitr::opts_chunk$set(echo = TRUE,
 ```
 
 # Task 1
+
 ```{r}
 #Read the dataset and replace "?" with NA
 engine <- read.csv("Engine.csv", na.strings = "?")
@@ -41,6 +46,7 @@ colSums(is.na(engine))
 rows_with_na <- sum(rowSums(is.na(engine)) > 0)
 cat("Rows with missing values in Engine:", rows_with_na, "\n")
 ```
+
 ## **Notes:**
 
 Only Engine has missing values "?" (Engine = 6, Automobile & Maintenance
@@ -72,6 +78,7 @@ median_hp <- median(engine$Horsepower, na.rm = TRUE)
 #Replace the missing Horsepower values with median
 engine$Horsepower[is.na(engine$Horsepower)] <- median_hp
 ```
+
 Horsepower is a numerical variable
 
 -\> use median -\> resistant to outliers and preserves the central
@@ -82,6 +89,7 @@ missing entries were retained as NA and it is only required to replace
 missing Horsepower values.
 
 ## Distribution of Horsepower Across Engine Types
+
 ```{r}
 # Distribution of Horsepower Across Engine Types
 library(ggplot2)
@@ -93,6 +101,7 @@ ggplot(engine, aes(x = Horsepower)) +
        x = "Horsepower", 
        y = "Count")
 ```
+
 The histogram indicates a strongly right-skewed distribution. The
 majority of Horsepower values are concentrated between 50 and 170,
 suggesting that most engines in the dataset belong to small to mid-sized
@@ -109,6 +118,7 @@ tendency of the dataset.
 # Task 2
 
 ## Horsepower Distribution Across Engine Types
+
 ```{r}
 # Distribution of Horsepower Across Engine Types
 library(ggplot2)
@@ -122,6 +132,7 @@ ggplot(engine, aes(x = Horsepower, fill = EngineType)) +
        y = "Count",
        fill = "Engine Types")
 ```
+
 The distribution of horsepower varies noticeably across different engine
 types. OHC engines appear most frequently in the dataset and generally
 fall within the low- to mid-range horsepower levels, indicating that
@@ -136,6 +147,7 @@ limited use in this dataset.
 with more advanced configurations tending to produce greater power.
 
 ## Horsepower Distribution Across Engine Size Groups
+
 ```{r}
 # Create Engine Size Groups
 engine$SizeGroup <- cut(engine$EngineSize,
@@ -155,3 +167,15 @@ ggplot(engine, aes(x = Horsepower, fill = SizeGroup)) +
        fill = "Engine Size Group")
 ```
 
+> When horsepower is examined across the engine size groups, the
+> distribution reveals that the majority of engines belong to the 91-190
+> size range, which corresponds to mid-sized engines commonly found in
+> everyday vehicles.These engines have a broad horsepower spread but
+> remain mostly within standard performance levels.Smaller engines in
+> the 60-90 group show notably lower horsepower values, reflecting their
+> limited power output.Engines in the 191-299 group shift toward higher
+> horsepower ranges but occur much less frequently, while engines in the
+> 300+ group are extremely rare and represent high-performance or
+> specialized models. =\> Clear relationship between engine size and
+> horsepower, where larger engines tend to support higher power
+> capacity.
