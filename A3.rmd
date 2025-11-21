@@ -184,10 +184,33 @@ ggplot(engine, aes(x = Horsepower, fill = SizeGroup)) +
 ############################################################### 
 
 # Task 3
-## 3.1 Do diesel cars have higher average CityMpg than gasoline cars?
 
+## 3.1 Do diesel cars have higher average CityMpg than gasoline cars?
 ```{r}
 t_test_fuel <- t.test(CityMpg ~ FuelTypes, 
                       data = merge(automobile, engine, by = "EngineModel"))
 t_test_fuel
 ```
+To determine whether diesel vehicles have higher average CityMpg than
+gasoline vehicles:
+
+-\> The results show a statistically significant difference between the
+two groups with:
+
+-   t = 3.90
+
+-   df = 22.6
+
+-   p = 0.00074
+
+-\> diesel: 30.30 MPG, gasoline: 24.28 MPG
+
+-\> Diesel cars have significantly higher CityMpg than gasoline cars
+
+-\> The 95% confidence interval (2.82 to 9.22 MPG) confirms that this
+difference is meaningful
+
+-\> since diesel engines generally operate more eﬀiciently at lower
+speeds and produce better fuel economy in city driving
+***Note:** check whether two groups have different averages -\> t-test:
+best choice*
