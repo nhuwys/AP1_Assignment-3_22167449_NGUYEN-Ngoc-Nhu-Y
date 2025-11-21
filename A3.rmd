@@ -93,3 +93,13 @@ ggplot(engine, aes(x = Horsepower)) +
        x = "Horsepower", 
        y = "Count")
 ```
+The histogram indicates a strongly right-skewed distribution. The
+majority of Horsepower values are concentrated between 50 and 170,
+suggesting that most engines in the dataset belong to small to mid-sized
+vehicles. However, the long right tail indicates several high-horsepower
+engines, which act as outliers.
+
+Since the missing values were replaced with the median horsepower, the
+distribution remains stable and does not shift. This is expected because
+the median is robust to extreme values and represents the central
+tendency of the dataset.
