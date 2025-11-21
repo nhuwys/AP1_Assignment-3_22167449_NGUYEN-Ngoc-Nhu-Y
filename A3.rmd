@@ -122,3 +122,15 @@ ggplot(engine, aes(x = Horsepower, fill = EngineType)) +
        y = "Count",
        fill = "Engine Types")
 ```
+The distribution of horsepower varies noticeably across different engine
+types. OHC engines appear most frequently in the dataset and generally
+fall within the low- to mid-range horsepower levels, indicating that
+they are typically used in standard consumer vehicles. In contrast, DOHC
+and OHCV engines display a wider spread and extend into higher
+horsepower ranges, suggesting that these engine types are associated
+with stronger performance capabilities. Rotor engines are rare and
+exhibit a very narrow horsepower distribution, highlighting their
+limited use in this dataset.
+
+=\> The engine type is closely related to the achievable horsepower,
+with more advanced configurations tending to produce greater power.
