@@ -347,4 +347,43 @@ table_Troubles_Methods
 chisq.test(table_Troubles_Methods)
 ```
 
+I chose Troubles, FuelTypes, and BodyStyles to clearly examine how
+different factors may influence the Maintenance Methods applied to
+trouble vehicles
 
+**Troubles x Methods (Significant)**
+
+-   Chi-square p-value \< 2.2e-16 \< 0.05 (strongest significant
+    relationship)
+
+-   Clear pattern:
+
+    -   Severe issues (Cylinders, Chassis, Cam shaft, Break system) -\>
+        mostly Replacement.
+
+    -   Minor or diagnostic issues (Noise, Ignition finding, Side slip)
+        -\> mostly Adjustment.
+
+=\> Type of trouble strongly determines the Maintenance Methods
+
+**FuelTypes (Near-significant)**
+
+-   Chi-square p-value = 0.0511 \> 0.05 (but closest to significance
+    among all non-significant factors)
+
+-   Clear trend:
+
+    -   Diesel vehicles -\> higher proportion of Replacement.
+
+    -   Gasoline vehicles -\> more balanced distribution across methods.
+
+=\> Fuel type hints at the underlying stress level on the engine, which
+affects the likelihood of needing Maintenance Methods (Replacement,
+Adjustment)
+
+**FuelTypes (Not significant)**
+
+-   Chi-square p-value = 0.7374 \> 0.005 -\> no statistical relationship
+
+=\> The shape or design of the car body does not influence how the
+vehicle must be repaired
