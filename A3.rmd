@@ -291,3 +291,15 @@ chisq.test(table_simple)
 -   ErrorCodes is a useful indicator of suspected issues
 
 ***Note**: two categorical variables are connected -\> Chi-square test*
+
+###############################################################
+
+# Task 4
+
+## Which error type (ErrorCodes) occurs most frequently
+```{r}
+# Count frequency of each error type
+error_counts <- table(maintenance$ErrorCodes)
+error_counts
+```
+
