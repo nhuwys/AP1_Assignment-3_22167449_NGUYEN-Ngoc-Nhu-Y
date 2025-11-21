@@ -37,4 +37,7 @@ cat("Missing values in Maintenance:", sum(is.na(maintenance)), "\n")
 ```{r}
 # Check which columns contain NA in the Engine dataset
 colSums(is.na(engine))
+# Count number of rows in Engine affected by missing values
+rows_with_na <- sum(rowSums(is.na(engine)) > 0)
+cat("Rows with missing values in Engine:", rows_with_na, "\n")
 ```
