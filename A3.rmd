@@ -221,26 +221,34 @@ best choice*
 ## 3.2 How does DriveWheels affect fuel efficiency (CityMpg and HighwayMpg)?
 
 ```{r}
+# Mean CityMpg by DriveWheels
+city_means <- aggregate(CityMpg ~ DriveWheels, data = automobile, mean)
+city_means
+
 # One-way ANOVA for CityMpg
 anova_city <- aov(CityMpg ~ DriveWheels, data = automobile)
-anova_city
+summary (anova_city)
+
+# Mean HighwayMpg by DriveWheels
+highway_means <- aggregate(HighwayMpg ~ DriveWheels, data = automobile, mean)
+highway_means
 
 # One-way ANOVA for HighwayMpg
 anova_highway <- aov(HighwayMpg ~ DriveWheels, data = automobile)
-anova_highway
+summary (anova_highway)
 ```
 
 To examine whether DriveWheels affects fuel efficiency:
 
-A one-way ANOVA was used because it compares the averages of three
-groups (FWD, RWD, 4WD) and checks if at least one is different
+DriveWheels has a significant effect on both CityMpg and HighwayMpg
 
-The results show a highly significant effect of DriveWheels on both
-CityMpg and HighwayMpg
+(p-value \< 2e-16 =\> p-value \< 0.001)
 
--   FWD cars use the least fuel, giving them the highest MPG
+Besides,
 
--   4WD cars use the most fuel, resulting in the lowest MPG
+-   FWD cars use the **least** fuel, giving them the highest MPG
+
+-   4WD cars use the **most** fuel, resulting in the lowest MPG
 
 -   RWD vehicles fall between the two
 
@@ -248,6 +256,7 @@ CityMpg and HighwayMpg
 the correct test for comparing three or more groups*
 
 ## 3.3 Filtering engines with trouble and Identifying Top 5 Trouble Types
+
 ```{r}
 # Filter trouble-related cases
 trouble <- maintenance[maintenance$ErrorCodes != 0, ]
@@ -256,6 +265,3 @@ trouble <- maintenance[maintenance$ErrorCodes != 0, ]
 top5_troubles <- sort(table(trouble$Troubles), decreasing = TRUE)[1:5]
 top5_troubles
 ```
-
-
-
