@@ -246,3 +246,16 @@ CityMpg and HighwayMpg
 
 ***Note**: DriveWheels strongly influences fuel economy, and ANOVA is
 the correct test for comparing three or more groups*
+
+## 3.3 Filtering engines with trouble and Identifying Top 5 Trouble Types
+```{r}
+# Filter trouble-related cases
+trouble <- maintenance[maintenance$ErrorCodes != 0, ]
+
+# List top 5 most common troubles
+top5_troubles <- sort(table(trouble$Troubles), decreasing = TRUE)[1:5]
+top5_troubles
+```
+
+
+
