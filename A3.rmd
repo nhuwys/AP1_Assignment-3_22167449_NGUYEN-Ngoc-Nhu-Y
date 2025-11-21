@@ -65,5 +65,8 @@ actual values are modified; NA only marks missing entries.**
 automobile$BodyStyles <- as.factor(automobile$BodyStyles)
 engine$FuelTypes <- as.factor(engine$FuelTypes)
 maintenance$ErrorCodes <- as.factor(maintenance$ErrorCodes)
+
+#Compute the median Horsepower for imputation
+median_hp <- median(engine$Horsepower, na.rm = TRUE)
 ```
 
