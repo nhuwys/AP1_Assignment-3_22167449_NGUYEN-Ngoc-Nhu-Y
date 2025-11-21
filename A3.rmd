@@ -338,3 +338,13 @@ table_Body_Methods
 chisq.test(table_Body_Methods)
 ```
 
+```{r}
+#Troubles vs Methods
+table_Troubles_Methods <- table(trouble_data$Troubles, trouble_data$Methods)
+table_Troubles_Methods
+
+#Chi-squared test
+chisq.test(table_Troubles_Methods)
+```
+
+
