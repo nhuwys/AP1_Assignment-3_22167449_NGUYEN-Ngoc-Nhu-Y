@@ -242,7 +242,7 @@ To examine whether DriveWheels affects fuel efficiency:
 
 DriveWheels has a significant effect on both CityMpg and HighwayMpg
 
-(p-value \< 2e-16 =\> p-value \< 0.001)
+(p-value \< 2e-16 \< 0.001)
 
 Besides,
 
@@ -282,3 +282,12 @@ trouble$HasTrouble <- ifelse(trouble$Troubles == "none" | is.na(trouble$Troubles
 table_simple <- table(trouble$ErrorCodes, trouble$HasTrouble)
 chisq.test(table_simple)
 ```
+
+-   Chi-square test -\> there is significant association (p-value \<
+    2.2e-16 \< 0.001)
+
+-   Vehicles with ErrorCodes \# 0 -\> more likely to have trouble
+
+-   ErrorCodes is a useful indicator of suspected issues
+
+***Note**: two categorical variables are connected -\> Chi-square test*
