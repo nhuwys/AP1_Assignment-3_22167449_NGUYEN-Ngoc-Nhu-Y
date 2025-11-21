@@ -103,3 +103,23 @@ Since the missing values were replaced with the median horsepower, the
 distribution remains stable and does not shift. This is expected because
 the median is robust to extreme values and represents the central
 tendency of the dataset.
+
+############################################################### 
+
+# Task 2
+
+## Horsepower Distribution Across Engine Types
+
+```{r}
+# Distribution of Horsepower Across Engine Types
+library(ggplot2)
+
+# Histogram of Horsepower for each engine type
+ggplot(engine, aes(x = Horsepower, fill = EngineType)) +
+  geom_histogram(binwidth = 10, alpha = 0.6, color = "black") +
+  facet_wrap(~EngineType, scales="free_y") +
+  labs(title = "Horsepower Distribution Across Engine Types",
+       x = "Horsepower",
+       y = "Count",
+       fill = "Engine Types")
+```
