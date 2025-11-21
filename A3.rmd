@@ -18,4 +18,13 @@ automobile <- read.csv("Automobile.csv", na.strings = "?")
 maintenance <- read.csv("Maintenance.csv", na.strings = "?")
 ```
 
+```{r}
+#Inspect the structure of the dataset "Engine.csv"
+str(engine)
+#Inspect the structure of the dataset "Automobile.csv"
+str(automobile)
+#Inspect the structure of the dataset "Maintenance.csv"
+str(maintenance)
+```
+
 
