@@ -176,6 +176,11 @@ ggplot(engine, aes(x = Horsepower, fill = SizeGroup)) +
 > limited power output.Engines in the 191-299 group shift toward higher
 > horsepower ranges but occur much less frequently, while engines in the
 > 300+ group are extremely rare and represent high-performance or
-> specialized models. =\> Clear relationship between engine size and
-> horsepower, where larger engines tend to support higher power
-> capacity.
+> specialized models.
+>
+> =\> Clear relationship between engine size and horsepower, where
+> larger engines tend to support higher power capacity.
+
+############################################################### 
+
+# Task 3
