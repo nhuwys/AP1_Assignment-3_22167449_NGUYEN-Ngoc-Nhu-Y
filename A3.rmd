@@ -41,3 +41,22 @@ colSums(is.na(engine))
 rows_with_na <- sum(rowSums(is.na(engine)) > 0)
 cat("Rows with missing values in Engine:", rows_with_na, "\n")
 ```
+## **Notes:**
+
+Only Engine has missing values "?" (Engine = 6, Automobile & Maintenance
+= 0).
+
+-\> only Engine has affected rows (Missing values occur only in
+Horsepower)
+
+-\> only Engine needs cleaning
+
+When inspecting the column, it is appeared that there are:
+
+-   5 missing entries occur in EngineType
+
+-   1 missing entry occurs in Horsepower
+
+**Replacing "?" with NA does not change the distribution because no
+actual values are modified; NA only marks missing entries.**
+
