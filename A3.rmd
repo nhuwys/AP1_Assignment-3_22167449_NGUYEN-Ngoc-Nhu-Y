@@ -10,5 +10,12 @@ knitr::opts_chunk$set(echo = TRUE,
                       warning = FALSE)
 ```
 
+# Task 1
+```{r}
+#Read the dataset and replace "?" with NA
+engine <- read.csv("Engine.csv", na.strings = "?")
+automobile <- read.csv("Automobile.csv", na.strings = "?")
+maintenance <- read.csv("Maintenance.csv", na.strings = "?")
+```
 
 
