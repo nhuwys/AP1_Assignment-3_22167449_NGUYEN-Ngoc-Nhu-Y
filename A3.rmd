@@ -141,5 +141,17 @@ with more advanced configurations tending to produce greater power.
 engine$SizeGroup <- cut(engine$EngineSize,
   breaks = c(60, 90, 190, 299, Inf),
   labels = c("60-90", "91-190", "191-299", "300+"))
+
+#Create table for Engine Size Groups
+table (engine$SizeGroup)
+
+#Facet_wrap Histogram of Horsepower by Size Groups
+ggplot(engine, aes(x = Horsepower, fill = SizeGroup)) +
+  geom_histogram(binwidth = 10, alpha = 0.6, color = "black") +
+  facet_wrap(~ SizeGroup, scales = "free_y") +
+  labs(title = "Horsepower Distribution Across Engine Size Groups",
+       x = "Horsepower", 
+       y = "Count",
+       fill = "Engine Size Group")
 ```
 
