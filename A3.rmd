@@ -27,4 +27,9 @@ str(automobile)
 str(maintenance)
 ```
 
-
+```{r}
+#Count total missing values after replacing "?" with NA
+cat("Missing values in Engine:", sum(is.na(engine)), "\n")
+cat("Missing values in Automobile:", sum(is.na(automobile)), "\n")
+cat("Missing values in Maintenance:", sum(is.na(maintenance)), "\n")
+```
