@@ -60,3 +60,10 @@ When inspecting the column, it is appeared that there are:
 **Replacing "?" with NA does not change the distribution because no
 actual values are modified; NA only marks missing entries.**
 
+```{r}
+#Convert categorical variables to factors
+automobile$BodyStyles <- as.factor(automobile$BodyStyles)
+engine$FuelTypes <- as.factor(engine$FuelTypes)
+maintenance$ErrorCodes <- as.factor(maintenance$ErrorCodes)
+```
+
