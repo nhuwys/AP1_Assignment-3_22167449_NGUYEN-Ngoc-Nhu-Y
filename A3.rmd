@@ -329,3 +329,12 @@ table_Fuel_Methods
 chisq.test(table_Fuel_Methods)
 ```
 
+```{r}
+#BodyStyles vs Methods
+table_Body_Methods <- table(trouble_data$BodyStyles, trouble_data$Methods)
+table_Body_Methods
+
+#Chi-squared test
+chisq.test(table_Body_Methods)
+```
+
