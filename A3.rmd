@@ -309,3 +309,14 @@ error_counts
 -   ErrorCode = –1 (suspected trouble): second
 
 -   ErrorCode =0 (no trouble): least frequent
+
+## 4.2 Analyze the factors that might influence the Maintenance Methods
+```{r}
+# Merge datasets and filter trouble cases
+library(dplyr)
+
+trouble_data <- merge(automobile, engine, by = "EngineModel") %>%
+  merge(maintenance, by = "PlateNumber") %>%
+  filter(ErrorCodes != 0)
+```
+
