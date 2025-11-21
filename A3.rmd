@@ -320,3 +320,12 @@ trouble_data <- merge(automobile, engine, by = "EngineModel") %>%
   filter(ErrorCodes != 0)
 ```
 
+```{r}
+# FuelTypes vs Methods
+table_Fuel_Methods <- table(trouble_data$FuelTypes, trouble_data$Methods)
+table_Fuel_Methods
+
+# Chi-squared test
+chisq.test(table_Fuel_Methods)
+```
+
