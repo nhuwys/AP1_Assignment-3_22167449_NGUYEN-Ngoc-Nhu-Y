@@ -68,5 +68,8 @@ maintenance$ErrorCodes <- as.factor(maintenance$ErrorCodes)
 
 #Compute the median Horsepower for imputation
 median_hp <- median(engine$Horsepower, na.rm = TRUE)
+
+#Replace the missing Horsepower values with median
+engine$Horsepower[is.na(engine$Horsepower)] <- median_hp
 ```
 
