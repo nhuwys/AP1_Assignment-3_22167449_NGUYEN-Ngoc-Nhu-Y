@@ -292,14 +292,20 @@ chisq.test(table_simple)
 
 ***Note**: two categorical variables are connected -\> Chi-square test*
 
-###############################################################
+############################################################### 
 
 # Task 4
 
-## Which error type (ErrorCodes) occurs most frequently
+## 4.1 Which error type (ErrorCodes) occurs most frequently
+
 ```{r}
 # Count frequency of each error type
 error_counts <- table(maintenance$ErrorCodes)
 error_counts
 ```
 
+-   ErrorCode = 1 (confirmed trouble): most frequent
+
+-   ErrorCode = –1 (suspected trouble): second
+
+-   ErrorCode =0 (no trouble): least frequent
