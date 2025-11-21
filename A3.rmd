@@ -89,7 +89,6 @@ missing entries were retained as NA and it is only required to replace
 missing Horsepower values.
 
 ## Distribution of Horsepower Across Engine Types
-
 ```{r}
 # Distribution of Horsepower Across Engine Types
 library(ggplot2)
@@ -118,7 +117,6 @@ tendency of the dataset.
 # Task 2
 
 ## Horsepower Distribution Across Engine Types
-
 ```{r}
 # Distribution of Horsepower Across Engine Types
 library(ggplot2)
@@ -147,7 +145,6 @@ limited use in this dataset.
 with more advanced configurations tending to produce greater power.
 
 ## Horsepower Distribution Across Engine Size Groups
-
 ```{r}
 # Create Engine Size Groups
 engine$SizeGroup <- cut(engine$EngineSize,
@@ -186,7 +183,6 @@ ggplot(engine, aes(x = Horsepower, fill = SizeGroup)) +
 # Task 3
 
 ## 3.1 Do diesel cars have higher average CityMpg than gasoline cars?
-
 ```{r}
 t_test_fuel <- t.test(CityMpg ~ FuelTypes, 
                       data = merge(automobile, engine, by = "EngineModel"))
@@ -223,5 +219,9 @@ best choice*
 # One-way ANOVA for CityMpg
 anova_city <- aov(CityMpg ~ DriveWheels, data = automobile)
 anova_city
+
+# One-way ANOVA for HighwayMpg
+anova_highway <- aov(HighwayMpg ~ DriveWheels, data = automobile)
+anova_highway
 ```
 
