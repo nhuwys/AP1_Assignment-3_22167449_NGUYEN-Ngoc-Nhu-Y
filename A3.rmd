@@ -184,3 +184,10 @@ ggplot(engine, aes(x = Horsepower, fill = SizeGroup)) +
 ############################################################### 
 
 # Task 3
+## 3.1 Do diesel cars have higher average CityMpg than gasoline cars?
+
+```{r}
+t_test_fuel <- t.test(CityMpg ~ FuelTypes, 
+                      data = merge(automobile, engine, by = "EngineModel"))
+t_test_fuel
+```
