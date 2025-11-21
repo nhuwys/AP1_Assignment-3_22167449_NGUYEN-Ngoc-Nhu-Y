@@ -268,8 +268,17 @@ top5_troubles
 
 Cylinders are the most common troubles (38)
 
-Then Chasis (25), Ignition Issues (22), Noise-related Issues (19), and Worn
-tires (16)
+Then Chasis (25), Ignition Issues (22), Noise-related Issues (19), and
+Worn tires (16)
 
 ***Note**: Count how many times each category appears -\> frequency
 table*
+
+## 3.4 Association Between Engine Type and Trouble Type
+
+```{r}
+trouble$HasTrouble <- ifelse(trouble$Troubles == "none" | is.na(trouble$Troubles), 0, 1)
+
+table_simple <- table(trouble$ErrorCodes, trouble$HasTrouble)
+chisq.test(table_simple)
+```
