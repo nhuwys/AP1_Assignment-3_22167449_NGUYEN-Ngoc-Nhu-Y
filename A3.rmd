@@ -72,4 +72,24 @@ median_hp <- median(engine$Horsepower, na.rm = TRUE)
 #Replace the missing Horsepower values with median
 engine$Horsepower[is.na(engine$Horsepower)] <- median_hp
 ```
+Horsepower is a numerical variable
 
+-\> use median -\> resistant to outliers and preserves the central
+tendency
+
+**Note on EngineType missing values:** EngineType is categorical;
+missing entries were retained as NA and it is only required to replace
+missing Horsepower values.
+
+## Distribution of Horsepower Across Engine Types
+```{r}
+# Distribution of Horsepower Across Engine Types
+library(ggplot2)
+
+#Visualize Horsepower distribution
+ggplot(engine, aes(x = Horsepower)) +
+  geom_histogram(binwidth = 10, fill = "skyblue", color = "black") +
+  labs(title = "Distribution of Horsepower", 
+       x = "Horsepower", 
+       y = "Count")
+```
