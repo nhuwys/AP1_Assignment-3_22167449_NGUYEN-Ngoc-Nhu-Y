@@ -219,4 +219,9 @@ speeds and produce better fuel economy in city driving
 best choice*
 
 ## 3.2 How does DriveWheels affect fuel efficiency (CityMpg and HighwayMpg)?
+```{r}
+# One-way ANOVA for CityMpg
+anova_city <- aov(CityMpg ~ DriveWheels, data = automobile)
+anova_city
+```
 
